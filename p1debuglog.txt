@@ -1,10 +1,5 @@
 gcc -g p1final.c
- ./a.out
-Enter two numbers you wish to add
-23
-43
-sum of 23 + 43 is 66
- gdb b main
+ gdb ./a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -19,21 +14,38 @@ Find the GDB manual and other documentation resources online at:
 <http://www.gnu.org/software/gdb/documentation/>.
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
-b: No such file or directory.
-/home/runner/pps-test1-Mayur2728-1/main: No such file or directory.
+Reading symbols from ./a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x79f: file p1final.c, line 9.
 (gdb) r
-Starting program:  
+Starting program: /home/runner/pps-test1-Mayur2728-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
-No executable file specified.
-Use the "file" or "exec-file" command.
+
+Breakpoint 1, main () at p1final.c:9
+9   {
 (gdb) n
-The program is not being run.
-(gdb) s
-The program is not being run.
+11    printf("Enter two numbers\n");
+(gdb) n
+Enter two numbers
+12    scanf("%f %f",&number1 , &number2);
+(gdb) n
+n
+13    result=addition(number1,number2);
+(gdb) n
+14    printf("%f + %f is %f",number1,number2,result);
+(gdb) n
+15    return 0;
+(gdb) n
+16    }(gdb) s
+__libc_start_main (main=0x559db8800797 <main>, argc=1, argv=0x7ffc07e036e8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffc07e036d8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
 (gdb) p
 The history is empty.
 (gdb) c
-The program is not being run.
+Continuing.
+0.000000 + 0.000000 is 0.000000[Inferior 1 (process 81) exited normally]
 (gdb) l
-No symbol table is loaded.  Use the "file" command.
+339 in ../csu/libc-start.c
 (gdb) q

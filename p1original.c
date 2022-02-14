@@ -1,13 +1,16 @@
-
-
-#include <stdio.h>
-
+#include<stdio.h>
+float addition(float number1,float number2)
+{
+  float sum=0;
+  sum= number1 + number2;
+  return sum;
+}
 int main()
 {
-  int num1,num2,sum;
-  printf("Enter two numbers you wish to add:\n");
-  scanf("%d%d",&num1,&num2);
-  sum= num1+num2;
-  printf("sum of %d + %d is %d\n",num1,num2,sum);
-return 0;
-}
+  float number1,number2,result;
+  printf("Enter two numbers\n");
+  scanf("%f %f",&number1 , &number2);
+  result=addition(number1,number2);
+  printf("%f + %f is %f",number1,number2,result);
+  return 0;
+  }
